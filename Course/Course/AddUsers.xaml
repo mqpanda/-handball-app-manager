@@ -1,0 +1,42 @@
+﻿<Window x:Class="Course.AddUsers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Course"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="470" Width="595"  WindowStartupLocation="CenterScreen">
+
+    <Grid  Margin="0,0,2,0">
+
+       
+
+        <Grid.Background>
+            <ImageBrush Stretch="None" ImageSource="C:\Users\danii\Desktop\Portfwork\JPG\back.jpg" AlignmentY="Top" AlignmentX="Center"/>
+        </Grid.Background>
+
+        <Border MinWidth="400" Margin="15" Background="White" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20" >
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="40" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+ 
+            <StackPanel>
+                <TextBlock FontSize="30" FontWeight="Bold" Margin="0 0 0 20" Text="Handball clubs"/>
+                <Grid Margin="0 0 0 20">
+                    <Button HorizontalAlignment="Left" Content="Back" Click="Button_backClick"/>
+                    <Button HorizontalAlignment="Right" Content="Add" Click="Button_addClick"/>
+                </Grid>
+
+                <TextBox x:Name="TextBoxName" materialDesign:HintAssist.Hint="Enter clubname" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam"/>
+                <TextBox x:Name="TextBoxCountry" materialDesign:HintAssist.Hint="Enter country" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam"/>
+                    
+
+
+            </StackPanel>
+
+
+        </Border>
+    </Grid>
+</Window>
