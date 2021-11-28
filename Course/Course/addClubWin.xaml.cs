@@ -19,10 +19,10 @@ namespace Course
     /// <summary>
     /// Логика взаимодействия для AddUsers.xaml
     /// </summary>
-    public partial class AddUsers : Window
+    public partial class addClubWin : Window
     {
         ApplicationContext db;
-        public AddUsers()
+        public addClubWin()
         {
             InitializeComponent();
             db = new ApplicationContext();
@@ -37,15 +37,16 @@ namespace Course
 
         private void Button_addClick(object sender, RoutedEventArgs e)
         {
-            string league = TextBoxLeague.Text.Trim();
-            Handball handball = new Handball(league);
+            string clubname = TextBoxClubName.Text.Trim();
+            Club club = new Club(clubname);
             //Вносим в базу данных
-            db.Handballs.Add(handball);
+            db.Clubs.Add(club);
             db.SaveChanges();
 
-            Clubpick clubpick = new Clubpick();
-            clubpick.Show();
+            UserPage userpage= new UserPage();
+            userpage.Show();
             this.Hide();
         }
     }
 }
+

@@ -73,7 +73,7 @@ namespace Course
                 TextBoxEmail.Background = Brushes.Transparent;
 
 
-                MessageBox.Show("Вы успешно зарегестрированны");
+                
                 User user = new User(login, email, password, role);
                 //Вносим в базу данных
                 db.Users.Add(user);
@@ -83,6 +83,8 @@ namespace Course
                 autowin.Show();
                 this.Hide();
             }
+
+            
         }
 
         private void Button_WinAuthClick(object sender, RoutedEventArgs e)

@@ -1,4 +1,4 @@
-﻿<Window x:Class="Course.UserPage"
+﻿<Window x:Class="Course.ClubRoster"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -98,12 +98,11 @@
                 <DropShadowEffect BlurRadius="40" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
 
-
+            
 
 
 
             <StackPanel>
-
                 <Grid Margin="0 0 0 5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="412*" />
@@ -111,52 +110,46 @@
 
                     </Grid.ColumnDefinitions>
                     <Button Grid.Column="1" HorizontalAlignment="Right" Content="Back" FontWeight="Bold" Click="Button_BackClick" Width="80" Height="Auto" FontSize="12" Margin="0,5,0,25" />
-                    <TextBlock Grid.Column="0" FontSize="30" VerticalAlignment="Bottom" FontWeight="Bold" Text="Clubs of this league" Height="60"/>
+                    <TextBlock Grid.Column="0" FontSize="30" VerticalAlignment="Bottom" FontWeight="Bold" Text="Players" Height="60"/>
                 </Grid>
 
-                <ScrollViewer Name="scroll" CanContentScroll="True" Height="150" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Style="{StaticResource MaterialDesignScrollViewer}">
-                    <GroupBox Padding="5" Style="{StaticResource MaterialDesignHeaderedContentControl}">
-                        <StackPanel>
-                            <ListView x:Name="listOfClubs" Margin="10">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <WrapPanel>
-                                            <Grid>
-                                                <Grid.ColumnDefinitions>
-                                                    <ColumnDefinition Width="auto" />
-                                                    <ColumnDefinition Width="auto" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <ScrollViewer Name="scroll" CanContentScroll="True" Height="150" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Visible" Style="{StaticResource MaterialDesignScrollViewer}">
+                        <GroupBox  Padding="5" Style="{StaticResource MaterialDesignHeaderedContentControl}">
+                            <StackPanel>
+                                <ListBox x:Name="playersList" ItemsSource="{Binding}">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <Grid>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="200*" />
+                                                        <ColumnDefinition Width="200*" />
+                                                        
 
-                                                </Grid.ColumnDefinitions>
-                                                <WrapPanel>
-                                                    <Button Grid.Column ="0"   HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" Content="{Binding Clubname}" FontWeight="Bold" Style="{StaticResource MaterialDesignFlatButton}" Width="150" Click="Button_pickClub"/>
+                                                    </Grid.ColumnDefinitions>
 
-                                                    <Button Grid.Column = "4"  FontSize="12" HorizontalAlignment="Right" VerticalAlignment="Center" Content="Delete" Style= "{StaticResource MaterialDesignFlatButton}"  Width="75" />
-                                                </WrapPanel>
-                                            </Grid>
+                                                    <TextBlock Grid.Column="0" Text="{Binding Person}" Margin="0 0 10 0" Width="200"/>
+                                                    <TextBlock Grid.Column="1" Text="{Binding Playerrole}" Width="100"/>
 
-                                        </WrapPanel>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </StackPanel>
-                    </GroupBox>
-                </ScrollViewer>
-
-                <Grid Margin="0 20 0 0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-                        <ColumnDefinition Width="*" />
-
-
-                    </Grid.ColumnDefinitions>
-
-                    <Button Grid.Column="0" HorizontalAlignment="Center" Content="Add" Click ="Button_AddClick" Width="75"/>
-
+                                                </Grid>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </StackPanel>
+                        </GroupBox>
+                    </ScrollViewer>
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+                        <Button Content="Добавить" Margin="10" Click="Add_Click" />
+                        <Button Content="Изменить" Margin="10" Click="Edit_Click"  />
+                        <Button Content="Удалить" Margin="10" Click="Delete_Click"  />
+                    </StackPanel>
                 </Grid>
-
 
 
             </StackPanel>
@@ -166,3 +159,4 @@
         </Border>
     </Grid>
 </Window>
+

@@ -40,8 +40,8 @@ namespace Course
 
             if (authUser != null)
             {
-                UserPage userpage = new UserPage();
-                userpage.Show();
+                Clubpick clubpick = new Clubpick();
+                clubpick.Show();
                 this.Hide();
 
             }
@@ -59,9 +59,13 @@ namespace Course
 
         private void Button_adminClick(object sender, RoutedEventArgs e)
         {
-            UserPage userpage = new UserPage();
-            userpage.Show();
+            Clubpick clubpick = new Clubpick();
+            clubpick.Show();
             this.Hide();
         }
+
+        
+
+        
     }
 } 

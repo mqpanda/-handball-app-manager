@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace Course
 {
     class User
     {
-        public int id { get; set; }
-        
+        public int Id { get; set; }
+
 
         public string login, email, password, role;
         public string Login
@@ -50,9 +47,100 @@ namespace Course
 
         }
 
-        /*public override string ToString()
+    }
+
+    class Handball
+    {
+        public int Id { get; set; }
+
+        public string league;
+
+
+
+        public string League
         {
-            return "Пользователь: " + Login + "; Пароль: " + Password;
-        }*/
+            get { return league; }
+            set { league = value; }
+        }
+
+
+        public Handball()
+        {
+
+        }
+
+        public Handball(string league)
+        {
+            this.league = league;
+
+        }
+
+    }
+
+    class Club
+    {
+        public int Id { get; set; }
+
+        public string clubname;
+
+
+
+        public string Clubname
+        {
+            get { return clubname; }
+            set { clubname = value; }
+        }
+
+
+        public Club()
+        {
+
+        }
+
+        public Club(string clubname)
+        {
+            this.clubname = clubname;
+
+        }
+    }
+
+    public class Player
+    {
+        private string playerrole;
+        private string person;
+        private string currentclub;
+
+        public int Id { get; set; }
+
+        public string Playerrole
+        {
+            get { return playerrole; }
+            set
+            {
+                playerrole = value;
+                
+            }
+        }
+        public string Person
+        {
+            get { return person; }
+            set
+            {
+                person = value;
+                
+            }
+        }
+        public string Currentclub
+        {
+            get { return currentclub; }
+            set
+            {
+                currentclub = value;
+                
+            }
+        }
+
+       
     }
 }
+

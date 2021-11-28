@@ -11,41 +11,34 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data.Entity;
 
 namespace Course
 {
     /// <summary>
-    /// Логика взаимодействия для UserPage.xaml
+    /// Логика взаимодействия для ClubAddRoster.xaml
     /// </summary>
-    public partial class UserPage : Window
+
+    public partial class ClubAddRoster : Window
     {
+        public Player Player { get; private set; }
+
         ApplicationContext db;
-        public UserPage()
+
+        public ClubAddRoster(Player p)
         {
             InitializeComponent();
-
             ApplicationContext db = new ApplicationContext();
-            List<Club> clubs = db.Clubs.ToList();
+            Player = p;
+            this.DataContext = Player;
             
-
-            listOfClubs.ItemsSource = clubs;
         }
-
-        private void Button_AddClick(object sender, RoutedEventArgs e)
+        private void Button_addClick(object sender, RoutedEventArgs e)
         {
-            addClubWin addclubwin = new addClubWin();
-            addclubwin.Show();
-            this.Hide();
+            this.DialogResult = true;
         }
 
-        private void Button_BackClick(object sender, RoutedEventArgs e)
-        {
-            Clubpick clubpick = new Clubpick();
-            clubpick.Show();
-            this.Hide();
-        }
-
-        private void Button_pickClub(object sender, RoutedEventArgs e)
+        private void Button_backClick(object sender, RoutedEventArgs e)
         {
             ClubRoster clubRoster = new ClubRoster();
             clubRoster.Show();

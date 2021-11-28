@@ -15,41 +15,43 @@ using System.Windows.Shapes;
 namespace Course
 {
     /// <summary>
-    /// Логика взаимодействия для UserPage.xaml
+    /// Логика взаимодействия для Clubpick.xaml
     /// </summary>
-    public partial class UserPage : Window
+    public partial class Clubpick : Window
     {
         ApplicationContext db;
-        public UserPage()
+        public Clubpick()
         {
             InitializeComponent();
-
-            ApplicationContext db = new ApplicationContext();
-            List<Club> clubs = db.Clubs.ToList();
             
 
-            listOfClubs.ItemsSource = clubs;
+            ApplicationContext db = new ApplicationContext();
+            List<Handball> handballs = db.Handballs.ToList();
+
+            listOfClubs.ItemsSource = handballs;
+            
         }
 
-        private void Button_AddClick(object sender, RoutedEventArgs e)
+        private void Button_addClick(object sender, RoutedEventArgs e)
         {
-            addClubWin addclubwin = new addClubWin();
-            addclubwin.Show();
+            AddUsers addusers = new AddUsers();
+            addusers.Show();
             this.Hide();
         }
 
         private void Button_BackClick(object sender, RoutedEventArgs e)
         {
-            Clubpick clubpick = new Clubpick();
-            clubpick.Show();
+            AutoWIN autowin = new AutoWIN();
+            autowin.Show();
             this.Hide();
         }
 
-        private void Button_pickClub(object sender, RoutedEventArgs e)
+        private void Button_clubClick(object sender, RoutedEventArgs e)
         {
-            ClubRoster clubRoster = new ClubRoster();
-            clubRoster.Show();
+            UserPage userpage = new UserPage();
+            userpage.Show();
             this.Hide();
+
         }
     }
 }
