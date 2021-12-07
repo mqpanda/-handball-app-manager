@@ -64,7 +64,9 @@ namespace Handball_app_manager
             adminLogin.Show();
         }
 
+        private void TextBoxLogin_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
 
-
+        }
     }
 }

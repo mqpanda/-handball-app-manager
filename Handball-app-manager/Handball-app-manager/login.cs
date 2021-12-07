@@ -114,7 +114,7 @@
     {
         private string playerrole;
         private string person;
-        private string currentclub;
+        private string clubname;
 
         public int Id { get; set; }
 
@@ -136,12 +136,12 @@
 
             }
         }
-        public string Currentclub
+        public string Clubname
         {
-            get { return currentclub; }
+            get { return clubname; }
             set
             {
-                currentclub = value;
+                clubname = value;
 
             }
         }

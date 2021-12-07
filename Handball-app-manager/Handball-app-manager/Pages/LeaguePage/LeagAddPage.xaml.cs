@@ -25,9 +25,10 @@ namespace Handball_app_manager.Pages.LeaguePage
 
         public void Button_backClick(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow();
-            mainWindow.Show();
-            this.Close();
+            LeaguePage.LeagPage leagPage = new LeaguePage.LeagPage();
+            this.Hide();
+            leagPage.Show();
+
         }
     }
 }

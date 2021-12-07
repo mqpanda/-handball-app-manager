@@ -118,6 +118,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\PlayerPage\PlayAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PlayerPage\PlayPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\RegisterPage\RegPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -141,6 +149,12 @@
     </Compile>
     <Compile Include="Pages\LeaguePage\LeagPage.xaml.cs">
       <DependentUpon>LeagPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlayerPage\PlayAddPage.xaml.cs">
+      <DependentUpon>PlayAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PlayerPage\PlayPage.xaml.cs">
+      <DependentUpon>PlayPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\RegisterPage\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>

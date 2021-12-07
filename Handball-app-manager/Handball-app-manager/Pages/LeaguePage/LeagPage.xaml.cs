@@ -1,5 +1,7 @@
-﻿using System.Windows;
+﻿
+using System.Windows;
 using System.Data.Entity;
+using System.Windows.Controls;
 
 namespace Handball_app_manager.Pages.LeaguePage
 {
@@ -10,6 +12,8 @@ namespace Handball_app_manager.Pages.LeaguePage
     {
         ApplicationContext db;
 
+
+      
         public LeagPage()
         {
             InitializeComponent();
@@ -32,8 +36,9 @@ namespace Handball_app_manager.Pages.LeaguePage
 
             }
             LeagPage leagPage = new LeagPage();
+            this.Hide();
             leagPage.Show();
-            this.Close();
+            
 
         }
         // редактирование
@@ -69,8 +74,9 @@ namespace Handball_app_manager.Pages.LeaguePage
             }
 
             LeagPage leagPage = new LeagPage();
+            this.Hide();
             leagPage.Show();
-            this.Close();
+            
 
         }
         // удаление
@@ -87,15 +93,22 @@ namespace Handball_app_manager.Pages.LeaguePage
         private void Button_BackClick(object sender, RoutedEventArgs e)
         {
             MainWindow mainWindow = new MainWindow();
+            this.Hide();
             mainWindow.Show();
-            this.Close();
+            
         }
 
         private void Button_clubClick(object sender, RoutedEventArgs e)
         {
-            ClubPage.ClubPage clubPage = new ClubPage.ClubPage();
+            Button selectedButton = (Button)e.Source;
+            string flowRegion = (string)selectedButton.Tag;
+            
+            ClubPage.ClubPage clubPage = new ClubPage.ClubPage(flowRegion);
+
+
+            this.Hide();
             clubPage.Show();
-            this.Close();
+            
 
 
         }

@@ -12,20 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace Handball_app_manager.Pages.ClubPage
+namespace Handball_app_manager.Pages.PlayerPage
 {
     /// <summary>
-    /// Логика взаимодействия для ClubAddPage.xaml
+    /// Логика взаимодействия для PlayAddPage.xaml
     /// </summary>
-    public partial class ClubAddPage : Window
+    public partial class PlayAddPage : Window
     {
-        public Club Club { get; private set; }
+        public Player Player { get; private set; }
 
-        public ClubAddPage(Club c)
+        public PlayAddPage(Player p)
         {
             InitializeComponent();
-            Club = c;
-            this.DataContext = Club;
+            Player = p;
+            this.DataContext = Player;
         }
 
 
@@ -39,7 +39,7 @@ namespace Handball_app_manager.Pages.ClubPage
             LeaguePage.LeagPage leagPage = new LeaguePage.LeagPage();
             this.Hide();
             leagPage.Show();
-            
+
         }
     }
 }

@@ -41,7 +41,7 @@
 
 
 
-                <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Enter login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam"/>
+                <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Enter login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam" TextChanged="TextBoxLogin_TextChanged"/>
                 <PasswordBox x:Name="PassBoxFirst" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
 
                 <Button Content="Sign in" Margin="0 15 0 0" Click="Button_AuthClick"/>

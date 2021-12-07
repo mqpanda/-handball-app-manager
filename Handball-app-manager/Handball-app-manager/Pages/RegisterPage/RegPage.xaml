@@ -40,7 +40,7 @@
 
                 <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Enter login" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Cursor="IBeam"/>
                 <PasswordBox x:Name="PassBoxFirst" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                <PasswordBox x:Name="PassBoxSecond" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <PasswordBox x:Name="PassBoxSecond" materialDesign:HintAssist.Hint="Repeat password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <TextBox x:Name="TextBoxEmail" materialDesign:HintAssist.Hint="Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
 
                 <Button Content="Sign up" Margin="0 15 " Click="Button_RegClick"/>

@@ -1,6 +1,7 @@
-﻿
+﻿using System.Linq;
 using System.Data.Entity;
 using System.Windows;
+using System.Windows.Controls;
 
 
 
@@ -10,21 +11,26 @@ namespace Handball_app_manager.Pages.ClubPage
     public partial class ClubPage : Window
     {
         ApplicationContext db;
+        public string selectedRegion { get; set; }
 
-        
-        public ClubPage()
+        public ClubPage(string selectedRegion = null)
         {
             InitializeComponent();
 
+            if(selectedRegion != null)
+            {
+                this.selectedRegion = selectedRegion;
+            }
+
             db = new ApplicationContext();
-            db.Clubs.Load();
             
-                
-
-
+            db.Clubs.Where(c => c.Region == this.selectedRegion).Load();
+            
 
             this.DataContext = db.Clubs.Local.ToBindingList();
-            
+
+
+
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -40,8 +46,9 @@ namespace Handball_app_manager.Pages.ClubPage
 
             }
             ClubPage clubPage = new ClubPage();
+            this.Hide();
             clubPage.Show();
-            this.Close();
+            
 
         }
         // редактирование
@@ -80,8 +87,9 @@ namespace Handball_app_manager.Pages.ClubPage
             }
 
             ClubPage clubPage = new ClubPage();
+            this.Hide();
             clubPage.Show();
-            this.Close();
+            
 
         }
         // удаление
@@ -98,17 +106,22 @@ namespace Handball_app_manager.Pages.ClubPage
         private void Button_BackClick(object sender, RoutedEventArgs e)
         {
             LeaguePage.LeagPage leagPage = new LeaguePage.LeagPage();
+            this.Hide();
             leagPage.Show();
-            this.Close();
+
         }
 
-        private void Button_clubClick(object sender, RoutedEventArgs e)
+        
+
+        private void Button_playClick(object sender, RoutedEventArgs e)
         {
-            ClubPage clubPage = new ClubPage();
-            clubPage.Show();
-            this.Close();
 
-
+            Button selectedButton = (Button)e.Source;
+            string flowClub = (string)selectedButton.Tag;
+            PlayerPage.PlayPage playPage = new PlayerPage.PlayPage(flowClub);
+            this.Hide();
+            playPage.Show();
+            
         }
     }
 }
