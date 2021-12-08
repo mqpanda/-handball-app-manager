@@ -36,9 +36,18 @@ namespace Handball_app_manager
             
             if (authUser != null)
             {
-                Handball_app_manager.Pages.LeaguePage.LeagPage leagPage = new Handball_app_manager.Pages.LeaguePage.LeagPage();
-                this.Close();
-                leagPage.Show();
+                if (login == "Superadmin" || password == "superadmin")
+                {
+                    Pages.AdminLogin.AdminLogin adminLogin = new Pages.AdminLogin.AdminLogin();
+                    this.Close();
+                    adminLogin.Show();
+                }
+                else
+                {
+                    Pages.LeaguePage.LeagPage leagPage = new Pages.LeaguePage.LeagPage();
+                    this.Close();
+                    leagPage.Show();
+                }
                 
             }
            
@@ -57,12 +66,7 @@ namespace Handball_app_manager
             
         }
 
-        private void Button_adminClick(object sender, RoutedEventArgs e)
-        {
-            Pages.AdminLogin.AdminLogin adminLogin = new Pages.AdminLogin.AdminLogin();
-            this.Close();
-            adminLogin.Show();
-        }
+        
 
         private void TextBoxLogin_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
         {

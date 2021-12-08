@@ -45,12 +45,7 @@
                 <PasswordBox x:Name="PassBoxFirst" materialDesign:HintAssist.Hint="Enter password" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
 
                 <Button Content="Sign in" Margin="0 15 0 0" Click="Button_AuthClick"/>
-                <Grid>
-
-
-                    <Button FontSize="12" HorizontalAlignment="Center" Content="Admin" Click="Button_adminClick" Style="{StaticResource MaterialDesignFlatButton}" Margin="0 10 0 0"/>
-                    
-                </Grid>
+                
 
             </StackPanel>
 

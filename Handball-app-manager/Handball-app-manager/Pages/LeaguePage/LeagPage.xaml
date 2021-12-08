@@ -106,11 +106,13 @@
                 <Grid Margin="0 0 0 5">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="412*" />
+                        
                         <ColumnDefinition Width="85*" />
 
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="1" HorizontalAlignment="Right" Content="Back" FontWeight="Bold" Click="Button_BackClick" Width="80" Height="Auto" FontSize="12" Margin="0,5,0,25" />
+                    <Button Grid.Column="2" HorizontalAlignment="Right" Content="Sign out" FontWeight="Bold" Click="Button_BackClick" Width="80" Height="Auto" FontSize="12" Margin="0,5,0,25" />
                     <TextBlock Grid.Column="0" FontSize="30" VerticalAlignment="Bottom" FontWeight="Bold" Text="Leagues" Height="60"/>
+                    
                 </Grid>
 
                 <Grid>
